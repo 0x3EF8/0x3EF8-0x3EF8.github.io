@@ -25,15 +25,12 @@
         
         #header {
             transition: ease-in-out 0.3s;
-            margin: 0 auto;
-            padding-bottom: 20px;
             position: relative;
             height: 100vh;
             display: flex;
             align-items: center;
             z-index: 997;
-            max-width: 1200px;
-            width: 100%;
+            overflow-y: auto;
         }
         
         #header * {
@@ -1471,32 +1468,6 @@
             background: #64ffda;
         }
         /*--------------------------------------------------------------
-# 3D Animated Sphere
---------------------------------------------------------------*/
-        /* Applying CSS to sphere */
-        
-        @media only screen and (max-width: 1000px) {
-            .Sphere {
-                margin-top: 130%;
-                position: absolute;
-                width: 100%;
-            }
-        }
-        
-        .tagcloud {
-            letter-spacing: 1px;
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.0em;
-            font-weight: bold;
-            height: auto;
-            margin: auto;
-        }
-        /* Change color of each text in sphere on hover   */
-        
-        .tagcloud--item:hover {
-            color: #00FFFF;
-        }
-        /*--------------------------------------------------------------
 # Music
 --------------------------------------------------------------*/
         
@@ -1515,10 +1486,9 @@
         #pause {
             display: none;
         }
-        /*--------------------------------------------------------------
+/*--------------------------------------------------------------
 # Time
 --------------------------------------------------------------*/
-        
         .clockx {
             padding-top: 10px;
             display: flex;
