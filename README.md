@@ -1,1 +1,1 @@
-# 0x3EF8-0x3EF8.github.io
+# 0x3EF8.github.io
