@@ -220,48 +220,6 @@ function readMore(btn) {
     btn.textContent == "Read More" ? btn.textContent = "Read Less" : btn.textContent = "Read More";
 }
 
-//3D Animated Sphere (TagCloud)
-
-const Texts = [
-    'HTML', 'CSS', 'JAVASCRIPT',
-    'SWIFT', 'MONGOOSE', 'REACT',
-    'PYTHON', 'SASS',
-    'DJANGO', 'NODEJS', 'MONGODB',
-    'EXPRESS', 'MYSQL', 'JQUERY',
-    'JAVA', 'C++', 'C#', 'C', 'Hacking',
-    'Algorithm', 'PHP', 'HTML', 'CSS',
-    'JS', '127.0.0.1', 'SQL', 'CSS', 'JAVASCRIPT',
-    'SWIFT', 'MONGOOSE', 'REACT',
-    'PYTHON', 'SASS',
-    'DJANGO', 'NODEJS', 'MONGODB',
-    'EXPRESS', 'MYSQL', 'JQUERY',
-    'JAVA', 'C++', 'C#', 'C', 'Hacking',
-    'Algorithm', 'PHP', 'HTML', 'CSS',
-    'JS', '127.0.0.1', 'SQL'
-];
-
-var tagCloud = TagCloud('.Sphere', Texts, {
-
-    // Sphere radius in px
-    radius: 230,
-
-    // animation speed
-    // slow, normal, fast
-    maxSpeed: 'normal',
-    initSpeed: 'fast',
-
-    // Rolling direction [0 (top) , 90 (left), 135 (right-bottom)] 
-    direction: 135,
-
-    // interaction with mouse or not [Default true (decelerate to rolling init speed, and keep rolling with mouse).]
-    keep: true
-
-});
-
-// Giving color to each text in sphere
-var color = '#FFFFFF ';
-document.querySelector('.Sphere').style.color = color;
-
 // Audio
 function toggleAudio() {
     var audioElement = document.getElementById('player')
@@ -276,33 +234,6 @@ function toggleAudio() {
         $(soundOn).hide();
         $(soundOff).show();
     }
-}
-
-// TagCloud color change 
-
-let colorChangeElements = document.getElementsByClassName('Sphere');
-let eachColorDuration = 2000;
-let colors = [
-    "red", "orange", "yellow", "green", "blue", "purple", "purple", "pink", "cyan", "lime"
-]
-
-// call startColorChange() for all elements with class name of "color-change"
-for (let i = 0; i < colorChangeElements.length; i++) {
-    colorChangeElements[i].style.transition = "color " + eachColorDuration / 1000 + "s";
-    startColorChange(colorChangeElements[i]);
-}
-
-function startColorChange(htmlElement) {
-    let i = 0;
-    let colorTimer = setInterval(function() {
-        htmlElement.style.color = colors[i];
-        i++;
-
-        if (i > colors.length - 1) {
-            i = 0;
-        }
-
-    }, eachColorDuration);
 }
 
 // Time 
@@ -344,29 +275,3 @@ const date = () => {
 }
 
 date();
-
- // Disable right click
- document.addEventListener('contextmenu', event => event.preventDefault());
- 
- document.onkeydown = function (e) {
-
-     // disable F12 key
-     if(e.keyCode == 123) {
-         return false;
-     }
-
-     // disable I key
-     if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
-         return false;
-     }
-
-     // disable J key
-     if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-         return false;
-     }
-
-     // disable U key
-     if(e.ctrlKey && e.keyCode == 85) {
-         return false;
-     }
- }
