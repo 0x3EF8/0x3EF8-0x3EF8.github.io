@@ -1486,9 +1486,10 @@
         #pause {
             display: none;
         }
-/*--------------------------------------------------------------
+        /*--------------------------------------------------------------
 # Time
 --------------------------------------------------------------*/
+        
         .clockx {
             padding-top: 10px;
             display: flex;
@@ -1500,4 +1501,203 @@
         
         #date {
             padding-left: 10px;
+        }
+        /*--------------------------------------------------------------
+# BLOG
+--------------------------------------------------------------*/
+        
+        .timeline {
+            width: 100%;
+            margin: auto;
+            max-width: 760px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            padding-bottom: 100px;
+            position: relative;
+        }
+        
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            height: 100%;
+            width: 3px;
+            background-color: #00FFFF;
+            transition: 0.6s 1.5s;
+            content: "";
+        }
+        
+        .timeline-overlay {
+            width: 100%;
+            background-color: #2d2d2d;
+            height: 0;
+            position: fixed;
+            top: 0;
+            z-index: 5;
+            left: 0;
+        }
+        
+        .timeline-headline {
+            color: #00FFFF;
+            position: absolute;
+            display: flex;
+            letter-spacing: 0.4px;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            left: 0;
+            width: 100%;
+            top: 100%;
+            font-size: calc(.2vw + 10px);
+            padding: 20px 0 0 0;
+        }
+        
+        .timeline-content {
+            display: none;
+            position: sticky;
+            color: #929292;
+            padding: 4% 10%;
+            font-size: calc(12px + .4vw);
+            width: 100%;
+            margin: auto;
+            line-height: 1.5;
+            background-color: #2d2d2d;
+        }
+        
+        .timeline-title h4 {
+            font-family: "Jura", serif;
+            margin: 0;
+            font-weight: normal;
+            font-size: 2em;
+            color: #00FFFF;
+            white-space: nowrap;
+        }
+        
+        .timeline-excerpt {
+            font-size: 1.1em;
+            padding: 0 10px;
+            line-height: 1.4;
+            font-weight: normal;
+            margin-top: 8px;
+            font-family: "K2D";
+            color: #929292;
+        }
+        
+        .timeline-item {
+            height: 30vh;
+            width: 45%;
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+        }
+        
+        .timeline-photo {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .kaspersky img {
+            background-attachment: fixed;
+            background-size: cover;
+            width: 50vh;
+            height: 30vh;
+            float: left;
+            margin: 0 15px 0 0;
+        }
+        
+        .timeline-cta {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            border: 0;
+            pointer-events: none;
+            transform: translateX(-50%);
+            background: none;
+            font-family: "K2D", sans-serif;
+            padding: 6px 10px;
+            outline: none;
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 1px;
+            opacity: 0;
+            color: #00FFFF;
+            background-color: rgba(58, 58, 58, 0.6);
+            border-radius: 4px;
+        }
+        
+        .timeline-photo>img {
+            overflow: hidden;
+            -o-object-fit: cover;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .timeline-subtitle {
+            margin: 0 0 6px 0;
+            font-family: "Jura", sans-serif;
+            font-weight: normal;
+            font-size: 1em;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+        
+        .timeline-back {
+            position: fixed;
+            right: 20px;
+            top: 10px;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 4;
+            padding: 5px 10px;
+            border: 1px solid #00FFFF;
+            background-color: rgba(58, 58, 58, 0.4);
+            border-radius: 4px;
+            outline: none;
+            display: flex;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        
+        .timeline-back.is-active {
+            opacity: 1;
+            top: 120px;
+            margin-right: 120px;
+            visibility: visible;
+            transition-delay: 2.4s;
+        }
+        
+        @media (max-width: 979px) {
+            .timeline-back.is-active {
+                margin-right: 0;
+            }
+        }
+        
+        .timeline-back:hover {
+            background-color: rgba(58, 58, 58, 0.8);
+        }
+        
+        .timeline-back>svg {
+            width: 28px;
+            stroke: #00FFFF;
+        }
+        
+        .timeline.is-expanded .timeline-item:not(.is-active) {
+            pointer-events: none;
+        }
+        
+        .timeline.is-expanded:before {
+            transition-delay: 0s;
+            opacity: 0;
+        }
+        
+        .timeline:not(.is-expanded) .timeline-item:not(.is-active) {
+            cursor: pointer;
         }
