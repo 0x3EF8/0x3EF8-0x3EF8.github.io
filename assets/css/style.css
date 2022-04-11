@@ -942,7 +942,7 @@
         
         .contact .info-box h3 {
             font-size: 20px;
-            color: #64ffda;
+            color: #00FFFF;
             font-weight: 700;
             margin: 10px 0 8px 68px;
         }
@@ -963,7 +963,7 @@
         .contact .info-box .social-links a {
             font-size: 18px;
             display: inline-block;
-            color: #64ffda;
+            color: #00FFFF;
             line-height: 1;
             margin-right: 12px;
             transition: 0.3s;
@@ -1002,7 +1002,7 @@
         .contact .php-email-form .sent-message {
             display: none;
             background: rgba(255, 255, 255, 0.08);
-            background: #64ffda;
+            background: #00FFFF;
             text-align: center;
             padding: 15px;
             font-weight: 600;
@@ -1022,7 +1022,7 @@
             width: 24px;
             height: 24px;
             margin: 0 10px -6px 0;
-            border: 3px solid #64ffda;
+            border: 3px solid #00FFFF;
             border-top-color: #eee;
             -webkit-animation: animate-loading 1s linear infinite;
             animation: animate-loading 1s linear infinite;
@@ -1058,7 +1058,7 @@
         
         .contact .php-email-form input:-ms-input-placeholder,
         .contact .php-email-form textarea:-ms-input-placeholder {
-            color: rgba(19, 173, 220, 0.3);
+            color: #00FFFF;
             opacity: 1;
         }
         
@@ -1092,7 +1092,7 @@
         }
         
         .contact .php-email-form button[type="submit"]:hover {
-            background: #64ffda;
+            background: #00FFFF;
             color: #040404;
         }
         
@@ -1155,7 +1155,7 @@
         }
         
         .portfolio-details .portfolio-details-carousel .owl-dot.active {
-            background-color: #64ffda !important;
+            background-color: #00FFFF !important;
         }
         
         .portfolio-details .portfolio-info {
@@ -1529,9 +1529,11 @@
         
         .timeline-overlay {
             width: 100%;
-            background-color: #2d2d2d;
+            background: url("https://wallpaperaccess.com/full/4525248.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
             height: 0;
-            position: fixed;
+            position: absolute;
             top: 0;
             z-index: 5;
             left: 0;
@@ -1601,15 +1603,6 @@
             border-radius: 5px;
             position: relative;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .kaspersky img {
-            background-attachment: fixed;
-            background-size: cover;
-            width: 50vh;
-            height: 30vh;
-            float: left;
-            margin: 0 15px 0 0;
         }
         
         .timeline-cta {
