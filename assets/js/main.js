@@ -488,8 +488,8 @@ L2Dwidget.init({
     },
     "display": {
         "position": "right",
-        "width": 75,
-        "height": 200,
+        "width": 100,
+        "height": 300,
         "hOffset": 0,
         "vOffset": 0
     },
@@ -498,7 +498,7 @@ L2Dwidget.init({
         "scale": 0.5
     },
     "react": {
-        "opacityDefault": 0.7,
+        "opacityDefault": 1.0,
         "opacityOnHover": 0.2
     }
 });
