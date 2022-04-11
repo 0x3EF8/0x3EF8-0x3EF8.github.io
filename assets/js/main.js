@@ -478,3 +478,27 @@ backButton.addEventListener("click", () => {
         to(overlay, 0.6, { height: 0, top: "100%", ease: Expo.easeOut });
     }
 });
+
+//waifu
+
+L2Dwidget.init({
+    "model": {
+        jsonPath: "https://unpkg.com/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json",
+        "scale": 1
+    },
+    "display": {
+        "position": "right",
+        "width": 75,
+        "height": 200,
+        "hOffset": 0,
+        "vOffset": 0
+    },
+    "mobile": {
+        "show": true,
+        "scale": 0.5
+    },
+    "react": {
+        "opacityDefault": 0.7,
+        "opacityOnHover": 0.2
+    }
+});
