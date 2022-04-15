@@ -1,7 +1,7 @@
 var DEFAULT_PARTICLE = {
     particles: {
         number: {
-            value: 30,
+            value: 50,
             density: {
                 enable: true,
                 value_area: 800,
