@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Jay Patrick Cano | Front-end Developer">
     <meta property="og:url" content="https://0x3ef8.github.io/">
-    <meta property="og:image" content="./assets/img/me.jpg">
+    <meta property="og:image" content="./assets/img/robot.png">
     <meta property="og:image:alt" content="I am Jay Patrick Cano, a self-taught front-end developer in the Philippines. I've also been involved in many back-end projects in the past, and I'm still working on them. The Internet and web development are my passions, and I believe in helping people with my skills and knowledge. I've been learning these things for the last two years, and it feels like learning more is a part of my life.">
 
     <meta property="og:site_name" content="Jay Patrick Cano - Front-end Developer">
@@ -102,12 +102,18 @@
             </div>
             <div class="row">
                 <div class="col-lg-4" data-aos="fade-right">
-                    <img src="assets/img/me.jpg" class="img-fluid" alt="Patrick cano">
+                    <div class="card">
+                        <img src="https://i.postimg.cc/28wvqTNH/me.jpg">
+                        <div class="card-part top-left"> </div>
+                        <div class="card-part top-right"> </div>
+                        <div class="card-part bottom-left"> </div>
+                        <div class="card-part bottom-right"></div>
+                    </div>
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                    <h3>Coder and Developer</h3>
+                    <h3>Jay Patrick Cano</h3>
                     <p class="font-italic">
-                        Student at Systems Technology Institute, Ormoc
+                        Information Technology Student
                     </p>
                     <div class="row">
                         <div class="col-lg-6">
@@ -126,8 +132,10 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="typer" data-text=" I am Jay Patrick Cano, a self-taught front-end developer in the Philippines. I've also been involved in many back-end projects in the past, and I'm still working on them. The Internet and web development are my passions, and I believe in helping people with my skills and knowledge. I've been learning these things for the last two years, and it feels like learning more is a part of my life.">
-                    </p>
+                    <div id="scramble">I am Jay Patrick Cano, a self-taught front-end developer in the Philippines. I've also been involved in many back-end projects in the past, and I'm still working on them. The Internet and web development are my passions, and I believe
+                        in helping people with my skills and knowledge. I've been learning these things for the last two years, and it feels like learning more is a part of my life.
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -178,6 +186,12 @@
                         </div>
                     </div>
                     <div class="progress">
+                        <span class="skill">Computer Hardware and Software <i class="val">50%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="progress">
                         <span class="skill">Java <i class="val">15%</i></span>
                         <div class="progress-bar-wrap">
                             <div class="progress-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
@@ -222,68 +236,138 @@
         </div>
         <!-- End Interests -->
         <!-- ======= Friends ======= -->
-        <div class=" Frinds container">
+        <div class="Fr container">
             <div class="section-title">
                 <h2>Friends</h2>
             </div>
-            <figure class="fr">
-                <div class="profile-image">
-                    <img src="./assets/img/profile/Melvin.png" alt="Melvin Jones Repol" />
-                    <div class="icons">
-                        <a href="https://github.com/mrepol742" target="_blank"><i class="iconify" data-icon="bytesize:github" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
-                        <a href="https://mrepol742.github.io/" target="_blank"> <i class="iconify" data-icon="iconoir:www" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
-                        <a href="https://web.facebook.com/melvinjonesrepol" target="_blank"> <i class="iconify" data-icon="akar-icons:facebook-fill" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
-                    </div>
+            <div class="row flex-center sm-no-flex">
+                <div class="pull-right sm-no-float col-md-8">
+                    <ul class="Friends">
+                        <!-- single member row starts -->
+                        <li class="clearfix">
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./assets/img/friends/melvin.jpg" alt="Software Engineer">
+                                    <div class="Friends-info">
+                                        <h3>Melvin Repol</h3>
+                                        <p>Software Engr.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./assets/img/friends/mart.jpg" alt="UI Designer">
+                                    <div class="Friends-info">
+                                        <h3>Mart Salazar</h3>
+                                        <p>UI Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./img/friends.png" alt="UI Designer">
+                                    <div class="Friends-info">
+                                        <h3>Name</h3>
+                                        <p>UI Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- /single member row ends -->
+
+                        <!-- single member row starts -->
+                        <li class="clearfix">
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./img/friends.png" alt="UI Designer">
+                                    <div class="Friends-info">
+                                        <h3>Name</h3>
+                                        <p>UI Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./img/friends.png" alt="UI Designer">
+                                    <div class="Friends-info">
+                                        <h3>Name</h3>
+                                        <p>UI Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./img/friends.png" alt="UI Designer">
+                                    <div class="Friends-info">
+                                        <h3>Name</h3>
+                                        <p>UI Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- /single member row ends -->
+
+                        <!-- single member row starts -->
+                        <li class="clearfix">
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./img/friends.png" alt="UI Designer">
+                                    <div class="Friends-info">
+                                        <h3>Name</h3>
+                                        <p>UI Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./img/friends.png" alt="UI Designer">
+                                    <div class="Friends-info">
+                                        <h3>Name</h3>
+                                        <p>UI Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="Friends-details">
+                                <div>
+                                    <img src="./img/friends.png" alt="UI Designer">
+                                    <div class="Friends-info">
+                                        <h3>Name/h3>
+                                            <p>UI Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- /single member row ends -->
+
+                    </ul>
+                    <!-- /end team-photos -->
                 </div>
-                <figcaption>
-                    <h3>Melvin Jones</h3>
-                    <h4>Software Engineer</h4>
-                    <div class="post">
-                        <p class="rmtarget">A Software Engineer with a sound knowledge of Web Development. Has 3 years of experience in this area and currently at 1st year college studying Computer Programming under the course Bachelor of Science in Information Technology
-                            at Bestlink College of the Philippines.</p>
-                        <button onclick="readMore(this)">Read More</button>
-                    </div>
-                </figcaption>
-            </figure>
-            <figure class="fr">
-                <div class="profile-image">
-                    <img src="./assets/img/profile/Samiun.png" alt="Samiun Nafis" />
-                    <div class="icons">
-                        <a href="https://github.com/SamiunNafis" target="_blank"><i class="iconify" data-icon="bytesize:github" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
-                        <a href="https://samiunnafis.github.io/" target="_blank"> <i class="iconify" data-icon="iconoir:www" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
-                        <a href="https://web.facebook.com/SamiunNafis0" target="_blank"> <i class="iconify" data-icon="akar-icons:facebook-fill" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
-                    </div>
-                </div>
-                <figcaption>
-                    <h3>Samiun Nafis</h3>
-                    <h4>Frontend Developer</h4>
-                    <div class="post">
-                        <p class="rmtarget">Samiun Nafis is a frontend developer with sound knowledge in Android development. Skilled in HTML, CSS, JavaScript, JQuery, React and Bootstrap.
+                <!-- /end col-md-8 -->
+
+                <div class="pull-left col-md-4 sm-text-center">
+                    <div class="Friends-overview">
+                        <h2>Friends</h2>
+                        <a href="#">Meet My Entire Friends</a>
+                        <p>
+                            <div>wewsssss wewsssss wewwsssss wewssssss wewwssss wewsssss wewsssss wewwsssss wewssssss wewwssss wewsssss wewsssss wewwsssss wewssssss wewwssss</div>
                         </p>
-                        <button onclick="readMore(this)">Read More</button>
-                    </div>
-                </figcaption>
-            </figure>
-            <figure class="fr">
-                <div class="profile-image">
-                    <img src="./assets/img/profile/Elisha.png" alt="Elisha David" />
-                    <div class="icons">
-                        <a href="https://github.com/trexcruz" target="_blank"><i class="iconify" data-icon="bytesize:github" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
-                        <a href="https://trexcruz.github.io/" target="_blank"> <i class="iconify" data-icon="iconoir:www" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
-                        <a href="https://web.facebook.com/MelvinCypher" target="_blank"> <i class="iconify" data-icon="akar-icons:facebook-fill" style="color: #00FFFF;" data-width="24" data-height="24"></i></a>
                     </div>
                 </div>
-                <figcaption>
-                    <h3>Elisha David</h3>
-                    <h4>Programmer</h4>
-                    <div class="post">
-                        <p class="rmtarget">Elisha David Okon is a good programmer from Nigeria. Main in Web and Mobile Development.</p>
-                        <button onclick="readMore(this)">Read More</button>
-                    </div>
-                </figcaption>
-            </figure>
+                <!-- /end col-md-4 -->
+            </div>
+            <!-- /end row -->
         </div>
+        <!-- /end container -->
+        </div>
+
     </section>
+
     <!-- End Friends -->
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
@@ -297,18 +381,19 @@
                     <h3 class="resume-title">Education</h3>
                     <div class="resume-item">
                         <h4>College </h4>
-                        <h5>2019 - unknown</h5>
-                        <p><em>Computer Science Engineering at STI Ormoc City</em></p>
+                        <h5>2019 - 2021</h5>
+                        <p><em>Associate in Information Technology</em></p>
+                        <p><em>Saint Joseph College</em></p>
                     </div>
                     <div class="resume-item">
-                        <h4>Senior High </h4>
+                        <h4>TESDA </h4>
                         <h5>2017 - 2019</h5>
-                        <p><em>Science Technology Engineering Mathematics at SJC Maasin City</em></p>
+                        <p><em>HUMS at SJC Maasin City</em></p>
                     </div>
                     <div class="resume-item">
                         <h4>Junior High </h4>
                         <h5>2012 - 2017</h5>
-                        <p><em>Saint Joseph College, Maasin City</em></p>
+                        <p><em>Maasin City National High School</em></p>
                     </div>
                     <div class="resume-item">
                         <h4>Elementary </h4>
@@ -331,15 +416,15 @@
                         </p>
                     </div>
                     <div class="resume-item">
-                        <h4>Campus Ambassador</h4>
+                        <h4>Working Student</h4>
                         <h5>July 2021</h5>
-                        <p><em>AI Policy Labs, STI Ormoc City</em></p>
+                        <p><em>Saint Joseph Colleges</em></p>
                     </div>
                     <h3 class="resume-title">Clubs and Societies</h3>
                     <div class="resume-item">
                         <h4>Member of Tech Team</h4>
-                        <h5>Jul 2020 - March 2021</h5>
-                        <p><em>Chaos Computer Club</em></p>
+                        <h5>Jan 2021</h5>
+                        <p><em>Hall Of Codes</em></p>
                     </div>
                 </div>
             </div>
