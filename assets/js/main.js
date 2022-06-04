@@ -163,19 +163,155 @@
     });
 
 })(jQuery);
-// Typing effects 
-var theText = $(".typer").data("text"),
-    theTextLength = theText.length,
-    n = 0,
-    theTyper = setInterval(function() {
-        $(".typer").each(function() {
-            $(this).html($(this).html() + theText[n]);
-        });
-        n += 1;
-        if (n === theTextLength) {
-            clearInterval(theTyper);
+
+
+//  Descramble Text Effect
+function Descramble(holder, opt) {
+    var that = this;
+    var time = 0;
+    this.now;
+    this.then = Date.now();
+    this.delta;
+    this.currentTimeOffset = 0;
+    this.word = null;
+    this.currentWord = null;
+    this.currentCharacter = 0;
+    this.currentWordLength = 0;
+
+    var options = {
+        fps: 60,
+        timeOffset: 1,
+        textColor: '#ffffff',
+        mixCapital: true,
+        mixBlockCharacters: true,
+        needUpdate: true
+    }
+
+    if (typeof opt != "undefined") {
+        for (key in opt) {
+            options[key] = opt[key];
         }
-    }, 80);
+    }
+
+    this.fps = options.fps;
+    this.interval = 1000 / this.fps;
+    this.timeOffset = options.timeOffset;
+    this.textColor = options.textColor;
+    this.mixCapital = options.mixCapital;
+    this.mixBlockCharacters = options.mixBlockCharacters;
+    this.needUpdate = true;
+
+    this.chars = [
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    ];
+
+    // hex character codes for: ░ ▒ ▓ █ ▖ ▗ ▘ ▙ ▚ ▛ ▜ ▝ ▞ ▟
+    this.blockCharacters = [
+        '&#x2591;', '&#x2592;', '&#x2593;', '&#x2588;',
+        '&#x2596;', '&#x2597;', '&#x2598;', '&#x2599;',
+        '&#x259A;', '&#x259B;', '&#x259C;', '&#x259D;',
+        '&#x259E;', '&#x259F;'
+    ];
+
+    if (this.mixBlockCharacters) {
+        this.chars = this.chars.concat(this.blockCharacters);
+    }
+
+    //if DOM
+    if (typeof holder != "undefined") {
+        this.holder = holder;
+    }
+
+    this.getRandCharacter = function(charToReplace) {
+        if (charToReplace == " ") {
+            return ' ';
+        }
+        var randNum = Math.floor(Math.random() * this.chars.length);
+        var lowChoice = -.5 + Math.random();
+        var pickedChar = this.chars[randNum];
+        var chosen = pickedChar.toLowerCase();
+        if (this.mixCapital) {
+            chosen = lowChoice < 0 ? pickedChar.toLowerCase() : pickedChar;
+        }
+        return chosen;
+    }
+
+    this.writeWord = function(word) {
+        this.word = word;
+        this.currentWord = word.split('');
+        this.currentWordLength = this.currentWord.length;
+
+    }
+
+    this.generateSingleCharacter = function(color, character) {
+        var span = document.createElement('span');
+        span.style.color = color;
+        span.innerHTML = character;
+        return span;
+    }
+
+    this.updateCharacter = function(time) {
+
+        this.now = Date.now();
+        this.delta = this.now - this.then;
+
+        if (this.delta > this.interval) {
+            this.currentTimeOffset++;
+
+            var word = [];
+
+            if (this.currentTimeOffset === this.timeOffset && this.currentCharacter !== this.currentWordLength) {
+                this.currentCharacter++;
+                this.currentTimeOffset = 0;
+            }
+            for (var x = 0; x < this.currentCharacter; x++) {
+                word.push(this.currentWord[x]);
+            }
+
+            for (var x = 0; x < this.currentWordLength - this.currentCharacter; x++) {
+                word.push(this.getRandCharacter(this.currentWord[this.currentCharacter + x]));
+            }
+
+            if (that.currentCharacter === that.currentWordLength) {
+                that.needUpdate = false;
+            }
+            this.holder.innerHTML = '';
+            word.forEach(function(w, index) {
+                var color = null
+                if (index > that.currentCharacter) {
+                    color = that.textColor;
+                }
+                that.holder.appendChild(that.generateSingleCharacter(color, w));
+            });
+            this.then = this.now - (this.delta % this.interval);
+        }
+    }
+
+    this.restart = function() {
+        this.currentCharacter = 0;
+        this.needUpdate = true;
+    }
+
+    function update(time) {
+        time++;
+        if (that.needUpdate) {
+            that.updateCharacter(time);
+        }
+        requestAnimationFrame(update);
+    }
+
+    this.writeWord(this.holder.innerHTML);
+    update(time);
+}
+
+var scrambledText = document.getElementById('scramble');
+
+var descrambledText = new Descramble(scrambledText, {
+    timeOffset: 1,
+    mixCapital: true,
+    mixBlockCharacters: true
+});
 
 
 // Mouse effects 
