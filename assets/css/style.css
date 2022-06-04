@@ -414,6 +414,11 @@ section .container {
 # About
 --------------------------------------------------------------*/
 
+scramble {
+    height: 100%;
+    margin-top: 20px;
+}
+
 .about-me .content h3 {
     font-weight: 700;
     font-size: 26px;
@@ -437,6 +442,64 @@ section .container {
 
 .about-me .content p:last-child {
     margin-bottom: 0;
+}
+
+.card {
+    max-width: 300px;
+    position: relative;
+    transition: box-shadow .2s linear;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+}
+
+.card>img {
+    visibility: hidden;
+}
+
+.card .card-part {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-image: url(https://i.postimg.cc/28wvqTNH/me.jpg);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+    transition: all .3s linear;
+}
+
+.card:hover .card-part {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+.card .top-left {
+    top: 0;
+    left: 0;
+    background-position: 0 0;
+    transform: translate(-20px, -25px);
+}
+
+.card .top-right {
+    top: 0;
+    right: 0;
+    background-position: right 0;
+    transform: translate(5px, -5px);
+}
+
+.card .bottom-left {
+    bottom: 0;
+    left: 0;
+    background-position: 0 bottom;
+    transform: translate(-5px, -5px);
+}
+
+.card .bottom-right {
+    bottom: 0;
+    right: 0;
+    background-position: right bottom;
+    transform: translate(15px, 15px);
 }
 
 
@@ -1341,145 +1404,199 @@ bubles {
 # Friends
 --------------------------------------------------------------*/
 
-.fr {
-    box-shadow: none;
-    color: #141414;
-    display: inline-block;
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.4em;
-    margin: 10px;
-    max-width: 315px;
-    min-width: 230px;
-    position: relative;
-    text-align: left;
-    width: 100%;
+.Friends {
+    transform: rotate(-45deg);
 }
 
-.fr * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.fr .profile-image img {
-    border-radius: 5px;
-    max-width: 100%;
-    height: 80px;
-    vertical-align: top;
+.Friends li>div {
     float: left;
+    width: 20%;
 }
 
-.fr figcaption {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 5px;
-    color: #fff;
-    display: inline-block;
-    margin-top: 15px;
-    padding: 25px;
-    position: relative;
+.Friends li:nth-child(2)>div:first-child {
+    margin-left: 20%;
+}
+
+.Friends li:last-child>div:first-child {
+    margin-left: 40%;
+}
+
+.Friends-details>div {
+    background-color: #ddd;
+    margin: 5px;
+}
+
+.Friends-details img {
+    transform: rotate(45deg) translate(0, 15px) scale(1.2);
+    display: block;
     width: 100%;
+    height: 100%;
 }
 
-.fr figcaption:after {
-    border-color: transparent transparent rgba(255, 255, 255, 0.08) transparent;
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-    bottom: 100%;
-    content: '';
-    height: 0;
-    left: 32px;
-    position: absolute;
-    width: 0;
-}
 
-.fr h3 {
-    font-weight: 600;
-    font-size: 1.2em;
-    font-family: 'Montserrat', Arial, sans-serif;
-}
+/* hover content - style */
 
-.fr h4 {
-    color: #8c8c8c;
-    font-weight: 400;
-    letter-spacing: 2px;
-}
-
-.fr p {
-    font-size: 0.9em;
-    letter-spacing: 1px;
-    opacity: 0.9;
-}
-
-.fr .icons {
-    padding: 30px 90px;
-}
-
-.fr i {
-    color: #ffffff;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: normal;
-    opacity: 0.75;
-    padding: 10px 2px;
-}
-
-.fr i:hover {
-    opacity: 1;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-}
-
-.post {
-    font-family: "Poppins", sans-serif;
-}
-
-.post p {
-    font-size: 14px;
-}
-
-.post:not(:last-child) {
-    margin-bottom: 50px;
-}
-
-.hide {
-    display: none;
-}
-
-button {
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: inset 0 0 6px 0 rgba(255, 255, 255, 0.08);
-    border-radius: 50px;
-    color: #ffffff;
-    text-shadow: rgba(255, 255, 255, 0.08);
-    cursor: pointer;
+.Friends-details>div {
     position: relative;
     overflow: hidden;
-    transition: 0.5s ease;
 }
 
-button::after {
-    -webkit-transform: rotate(10deg);
-    -ms-transform: rotate(10deg);
-    transform: rotate(10deg);
-    content: "";
-    background-color: #00FFFF;
-    opacity: 0.2;
-    height: 300px;
-    width: 60px;
+.Friends-info {
     position: absolute;
-    left: -120px;
-    top: -120px;
-    transition: 0.5s ease;
+    top: 50%;
+    transform: rotate(45deg) translate(-12px, 15px);
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
 }
 
-button:hover {
-    background-color: #414550;
-    text-shadow: 0 0 2px #414550;
+.Friends-info h3,
+.Friends-info p {
+    margin: 0;
+    color: #fff;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
 }
 
-button:hover:after {
-    left: 100%;
+.Friends-info h3 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    top: -100px;
+}
+
+.Friends-info p {
+    font-weight: 300;
+    font-size: 12px;
+    bottom: -150px;
+}
+
+.Friends-details>div:after {
+    content: '';
+    background-image: linear-gradient(45deg, rgba(49, 154, 224, 0.8) 50%, transparent 50%);
+    position: absolute;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* hover content - onhover */
+
+.Friends-details *,
+.Friends-details>div:after {
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.Friends-details:hover *,
+.Friends-details:hover>div:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.Friends-details:hover .Friends-info h3 {
+    top: 0;
+}
+
+.Friends-details:hover .Friends-info p {
+    bottom: 0;
+}
+
+
+/* Team overview */
+
+.Friends-overview {
+    padding-right: 15px;
+}
+
+.Friends-overview h2 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.Friends-overview>a {
+    margin-bottom: 30px;
+    display: block;
+}
+
+.Friends-overview>a:before {
+    content: '';
+    width: 10px;
+    height: 2px;
+    position: relative;
+    top: -3px;
+    margin-right: 5px;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+
+/* For centering elements - optional - Can use table,tablecell instead */
+
+.flex-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center>div:first-child {
+    order: 2;
+}
+
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 992px) {
+    .sm-no-flex {
+        display: block;
+    }
+    .sm-no-float {
+        float: none !important;
+    }
+    .sm-text-center {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .Friends li {
+        text-align: center;
+    }
+    .Friends li>div {
+        float: none;
+        display: inline-block;
+        width: 30%;
+        margin: 0 !important;
+    }
+    .Friends {
+        transform: rotate(0);
+    }
+    .Friends-details img {
+        transform: rotate(0) translate(0, 0);
+    }
+    .Friends-overview {
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 399px) {
+    .Friends li>div {
+        width: 48%;
+    }
+}
+
+.clearfix {
+    list-style: none;
 }
 
 
