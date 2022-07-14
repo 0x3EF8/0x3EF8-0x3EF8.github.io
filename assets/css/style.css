@@ -413,12 +413,6 @@ section .container {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-
-scramble {
-    height: 100%;
-    margin-top: 20px;
-}
-
 .about-me .content h3 {
     font-weight: 700;
     font-size: 26px;
@@ -443,108 +437,72 @@ scramble {
 .about-me .content p:last-child {
     margin-bottom: 0;
 }
-
-.card {
-    max-width: 300px;
+  .border {
+    height: 369px;
+    width: 290px;
+    background: transparent;
+    border-radius: 10px;
+    transition: border 1s;
     position: relative;
-    transition: box-shadow .2s linear;
-}
-
-.card:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
-}
-
-.card>img {
-    visibility: hidden;
-}
-
-.card .card-part {
-    position: absolute;
-    height: 50%;
-    width: 50%;
-    background-image: url(https://i.postimg.cc/28wvqTNH/me.jpg);
-    background-repeat: no-repeat;
-    background-size: 200%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
-    transition: all .3s linear;
-}
-
-.card:hover .card-part {
-    transform: translate(0, 0);
-    box-shadow: none;
-}
-
-.card .top-left {
-    top: 0;
-    left: 0;
-    background-position: 0 0;
-    transform: translate(-20px, -25px);
-}
-
-.card .top-right {
-    top: 0;
-    right: 0;
-    background-position: right 0;
-    transform: translate(5px, -5px);
-}
-
-.card .bottom-left {
-    bottom: 0;
-    left: 0;
-    background-position: 0 bottom;
-    transform: translate(-5px, -5px);
-}
-
-.card .bottom-right {
-    bottom: 0;
-    right: 0;
-    background-position: right bottom;
-    transform: translate(15px, 15px);
-}
-
-
-/*--------------------------------------------------------------
-# Counts
---------------------------------------------------------------*/
-
-.counts {
-    padding: 70px 0 60px;
-}
-
-.counts .count-box {
-    padding: 30px 30px 25px 30px;
-    width: 100%;
+  }
+  .border:hover {
+    border: 1px solid #fff;
+  }
+  .card {
+    height: 379px;
+    width: 300px;
+    background: #808080;
+    border-radius: 10px;
+    transition: background 0.8s;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 70px 63px -60px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.counts .count-box i {
+  }
+  .pat {
+    background: url("https://i.postimg.cc/c1k5fTR8/pat.png") center center no-repeat;
+    background-size: 300px;
+  }
+  .pat:hover {
+    background: url("https://i.postimg.cc/c1k5fTR8/pat.png") left center no-repeat;
+    background-size: 650px;
+  }
+  .pat:hover h6 {
+    opacity: 1;
+  }     
+  .pat:hover .fa {
+    opacity: 1;
+  }
+  h6 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+  } 
+  .fa {
+    opacity: 0;
+    transition: opacity 1s; 
+  }
+  .icons {
     position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 24px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px;
-    color: #00FFFF;
-    border-radius: 50px;
-}
-
-.counts .count-box span {
-    font-size: 36px;
-    display: block;
-    font-weight: 600;
-    color: #fff;
-}
-
-.counts .count-box p {
-    padding: 0;
-    margin: 0;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
-}
-
+    fill: #fff;
+    color: rgb(0, 0, 0);
+    height: 130px;
+    top: 126px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+ a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
 
 /*--------------------------------------------------------------
 # Skills
@@ -780,7 +738,7 @@ scramble {
     margin: 0 auto;
     width: 64px;
     height: 64px;
-    background: #64ffda;
+    background: #00FFFF;
     border-radius: 5px;
     transition: all .3s ease-out 0s;
     display: flex;
@@ -825,8 +783,8 @@ scramble {
 }
 
 .services .icon-box:hover {
-    background: #64ffda;
-    border-color: #64ffda;
+    background: #00FFFF;
+    border-color: #00FFFF;
 }
 
 .services .icon-box:hover .icon {
@@ -834,11 +792,11 @@ scramble {
 }
 
 .services .icon-box:hover .icon i {
-    color: #64ffda;
+    color: #00FFFF;
 }
 
 .services .icon-box:hover .icon::before {
-    background: #64ffda;
+    background: #00FFFF;
 }
 
 .services .icon-box:hover h4 a,
@@ -851,6 +809,24 @@ scramble {
 # Portfolio
 --------------------------------------------------------------*/
 
+button {
+    transition: all .5s ease;
+    color: #fff;
+    border: 2px solid #00FFFF;
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 10px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    border-radius: 4px;
+}
+button:hover {
+    color: #00FFFF;
+    background: rgba(0, 0, 0, 0.8);
+}
 .portfolio .portfolio-item {
     margin-bottom: 30px;
 }
@@ -887,7 +863,7 @@ scramble {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-    background: #64ffda;
+    background: #00FFFF;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -1404,200 +1380,6 @@ bubles {
 # Friends
 --------------------------------------------------------------*/
 
-.Friends {
-    transform: rotate(-45deg);
-}
-
-.Friends li>div {
-    float: left;
-    width: 20%;
-}
-
-.Friends li:nth-child(2)>div:first-child {
-    margin-left: 20%;
-}
-
-.Friends li:last-child>div:first-child {
-    margin-left: 40%;
-}
-
-.Friends-details>div {
-    background-color: #ddd;
-    margin: 5px;
-}
-
-.Friends-details img {
-    transform: rotate(45deg) translate(0, 15px) scale(1.2);
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-
-/* hover content - style */
-
-.Friends-details>div {
-    position: relative;
-    overflow: hidden;
-}
-
-.Friends-info {
-    position: absolute;
-    top: 50%;
-    transform: rotate(45deg) translate(-12px, 15px);
-    left: 0;
-    right: 0;
-    z-index: 2;
-    text-align: center;
-}
-
-.Friends-info h3,
-.Friends-info p {
-    margin: 0;
-    color: #fff;
-    position: relative;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.Friends-info h3 {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    top: -100px;
-}
-
-.Friends-info p {
-    font-weight: 300;
-    font-size: 12px;
-    bottom: -150px;
-}
-
-.Friends-details>div:after {
-    content: '';
-    background-image: linear-gradient(45deg, rgba(49, 154, 224, 0.8) 50%, transparent 50%);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-/* hover content - onhover */
-
-.Friends-details *,
-.Friends-details>div:after {
-    cursor: pointer;
-    transition: all .4s ease;
-}
-
-.Friends-details:hover *,
-.Friends-details:hover>div:after {
-    opacity: 1;
-    visibility: visible;
-}
-
-.Friends-details:hover .Friends-info h3 {
-    top: 0;
-}
-
-.Friends-details:hover .Friends-info p {
-    bottom: 0;
-}
-
-
-/* Team overview */
-
-.Friends-overview {
-    padding-right: 15px;
-}
-
-.Friends-overview h2 {
-    text-transform: uppercase;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.Friends-overview>a {
-    margin-bottom: 30px;
-    display: block;
-}
-
-.Friends-overview>a:before {
-    content: '';
-    width: 10px;
-    height: 2px;
-    position: relative;
-    top: -3px;
-    margin-right: 5px;
-    background-color: #ccc;
-    display: inline-block;
-}
-
-
-/* For centering elements - optional - Can use table,tablecell instead */
-
-.flex-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-center>div:first-child {
-    order: 2;
-}
-
-
-/* RESPONSIVE */
-
-@media only screen and (max-width: 992px) {
-    .sm-no-flex {
-        display: block;
-    }
-    .sm-no-float {
-        float: none !important;
-    }
-    .sm-text-center {
-        text-align: center;
-    }
-}
-
-@media only screen and (max-width: 550px) {
-    .Friends li {
-        text-align: center;
-    }
-    .Friends li>div {
-        float: none;
-        display: inline-block;
-        width: 30%;
-        margin: 0 !important;
-    }
-    .Friends {
-        transform: rotate(0);
-    }
-    .Friends-details img {
-        transform: rotate(0) translate(0, 0);
-    }
-    .Friends-overview {
-        padding: 15px;
-    }
-}
-
-@media only screen and (max-width: 399px) {
-    .Friends li>div {
-        width: 48%;
-    }
-}
-
-.clearfix {
-    list-style: none;
-}
 
 
 /*--------------------------------------------------------------
@@ -1631,7 +1413,7 @@ bubles {
 /* Handle on hover */
 
  ::-webkit-scrollbar-thumb:hover {
-    background: #64ffda;
+    background: #00FFFF;
 }
 
 
